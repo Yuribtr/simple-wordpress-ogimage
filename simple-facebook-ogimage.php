@@ -198,10 +198,17 @@ if( ! function_exists( 'sfogi_wp_head' ) ) {
 
 					$_image = sfogi_prepare_image_url( $_image );
 					$_image_secure = sfogi_get_secure_url( $_image );
-
-					echo '<meta property="og:image" content="' . $_image . '">' . "\n";
-					echo '<meta property="og:image:url" content="' . $_image . '">' . "\n";
-					echo '<meta property="og:image:secure_url" content="' . $_image_secure . '">' . "\n";
+	
+                                        $_ogtitle = get_the_title();
+                                        $_ogurl = get_permalink();
+					echo '<meta property="og:image" content="' . $_image . '" />' . "\n";
+					echo '<meta property="og:image:width" content="415" />' . "\n";
+					echo '<meta property="og:image:height" content="316" />' . "\n";
+					echo '<meta property="og:image:url" content="' . $_image . '" />' . "\n";
+					echo '<meta property="og:image:secure_url" content="' . $_image_secure . '" />' . "\n";
+					echo '<meta property="og:url" content="' . $_ogurl . '" />' . "\n";
+					echo '<meta property="og:title" content="' . $_ogtitle . '" />' . "\n";
+					echo '<meta property="og:description" content="" />' . "\n";
 				}
 
 				// For other medias just display the one image
